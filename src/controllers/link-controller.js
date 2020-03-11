@@ -2,16 +2,19 @@ module.exports = class LinkController {
   constructor() {
 
   }
-  get() {
-    return { data: 'test get' };
+  post(req) {
+    return { link: req.body };
   }
-  post() {
-    return { data: 'test post' };
+  get(res) {
+      return { link: { id: res.params.id } };
   }
-  put() {
-    return { data: 'test put' };
+  getAll(res) {
+    return { links: [] };
   }
-  delete() {
-    return { data: 'test delete' };
+  put(res) {
+    return { link: { id: res.params.id } };
+  }
+  delete(res) {
+    return { link: { id: res.params.id } };
   }
 };
